@@ -1,0 +1,63 @@
+<div layout="row" layout-align="center center" style="height: 100%;" ng-show="vm.loading">
+    <md-progress-circular md-mode="indeterminate" md-diameter="96"></md-progress-circular>
+</div>
+
+<div ng-show="vm.noWeb3">
+    <md-content>
+        <div layout="row" layout-align="center" style="margin-top: 10%;">
+            <h1>Welcome to EthChat!</h1>
+        </div>
+        <div layout="row" layout-align="center">
+            <p style="width: 70%; line-height: 30px; text-align: center">
+                In order to get started you will need a secure Ethereum wallet. This will allow you to send
+                and receive information from the Ethereum blockchain. This project was developed with MetaMask in mind.
+            </p>
+        </div>
+        <div layout="row" layout-align="center">
+            <md-button class="md-raised md-primary" href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn" target="_blank">Get MetaMask</md-button>
+        </div>
+    </md-content>
+</div>
+
+<div ng-show="!vm.loading && !vm.noWeb3">
+    <div class="leftSidenavIcon" style="position:absolute; top:0; left:0; z-index: 1;">
+        <md-button class="md-fab md-mini md-primary" aria-label="Send" ng-click="vm.openSidenav()">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </md-button>
+    </div>
+
+    <md-content ng-Scroll-Bottom="vm.messages" style="height: 90%;">
+        <md-list>
+            <md-list-item class="md-3-line" ng-repeat="message in vm.messages | orderBy:item.key:reverse">
+                <div class="md-list-item-text"
+                     ng-style="{'text-align': (vm.username != message.username) ? 'left' : 'right'}"
+                     ng-attr-id="{{$last ? 'bottom': ''}}">
+                    <h3 class="messageUsername">{{message.displayname? message.displayname : message.username}}</h3>
+                    <h4>{{message.date | date:"MMMM d 'at' h:mm a"}}</h4>
+                    <p>{{message.message}}</p>
+                </div>
+                <md-divider ng-if="!$last"></md-divider>
+            </md-list-item>
+        </md-list>
+    </md-content>
+
+    <md-divider class="chatDivider" ng-show="vm.pendingMessages == 0"></md-divider>
+    <md-progress-linear md-mode="indeterminate" style="height: 1px;" ng-show="vm.pendingMessages > 0"></md-progress-linear>
+
+    <div ng-if="vm.username !== undefined" layout="row" class="chatBar" flex>
+        <md-input-container class="md-icon-float md-block" ng-keypress="vm.sendMessage($event)" flex>
+            <label>Your message</label>
+            <input type="text" ng-model="vm.chatMessage">
+        </md-input-container>
+        <div class="chatIcon">
+            <md-button class="md-icon-button launch" aria-label="Send" ng-click="vm.send()">
+                <i class="fa fa-comment-o fa-2x" aria-hidden="true"></i>
+            </md-button>
+        </div>
+    </div>
+    <div ng-if="vm.username === undefined" layout="row" class="chatBar" flex>
+        <p style="text-align: center; margin-top: 2.5%; width: 100%">
+            You are not logged in! Please log in to MetaMask in order to send messages
+        </p>
+    </div>
+</div>

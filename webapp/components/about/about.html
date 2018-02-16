@@ -1,0 +1,46 @@
+<md-dialog aria-label="Mango (Fruit)">
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>About EthChat</h2>
+                <span flex></span>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <h2>What is EthChat?</h2>
+                <p>
+                    EthChat is a secure distributed chat client running on the Ethereum blockchain. EthChat leverages
+                    Smart Contracts to create a chat application without a central server. Messages sent to the
+                    blockchain cannot be modified or faked, ensuring complete security.
+                </p>
+
+                <h2>What technologies does EthChat use?</h2>
+                <p>
+                    The EthChat smart contract is built using Solidity. This contract is currently running on the
+                    Ethereum blockhain and functions as the backend. The frontend is written using AngularJS,
+                    jQuery, Javascript, HTML, and CSS.
+                </p>
+
+                <h2>About me</h2>
+                <p>
+                    I am a student at Northeastern University studying Computer Science. I have had a passion for
+                    programming and technology since middle school. I am particularly interested in full stack
+                    development and have worked in this capacity at companies such as Amazon Robotics and Sauce Labs.
+                    I built this chat client in order to teach myself about Ethereum and the blockchain.
+                </p>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button href="https://www.linkedin.com/in/austenkeene/" target="_blank" md-autofocus>
+                My LinkedIn
+            </md-button>
+            <span flex></span>
+            <md-button ng-click="cancel()">
+                Close
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

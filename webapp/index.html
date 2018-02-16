@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+                integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+        <!-- Angular.js Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-cookies.min.js"></script>
+
+        <!-- Angular Material -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+        <script src="app.js"></script>
+        <script src="components/chatWindow/chatWindow.js"></script>
+        <script src="components/sidenav/sidenav.js"></script>
+        <script src="factories/messageFactory.js"></script>
+
+
+        <!-- Angular Material style sheet -->
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+
+        <link rel="stylesheet" href="main.css">
+
+
+        <link rel="icon" href="favicon.ico?" type="image/x-icon">
+
+
+        <script type="text/ng-template" src="./components/chatWindow/chatWindow.html"></script>
+        <script type="text/ng-template" src="./components/sidenav/sidenav.html"></script>
+
+        <script src="https://use.fontawesome.com/ecc40b70bc.js"></script>
+
+        <script src="libraries/web3.min.js"></script>
+    </head>
+    <body ng-app="EthChat">
+        <div layout="column" ng-cloak style="height: 100%;">
+
+            <section layout="row" flex>
+                <md-sidenav
+                        class="md-sidenav-left md-whiteframe-4dp"
+                        md-component-id="left"
+                        md-is-locked-open="$mdMedia('gt-md')"
+                        ng-include="'components/sidenav/sidenav.html'">
+                </md-sidenav>
+
+                <div class="chatWindowContainer" ng-view></div>
+            </section>
+        </div>
+    </body>
+</html>
