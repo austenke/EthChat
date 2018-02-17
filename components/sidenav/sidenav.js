@@ -40,7 +40,7 @@ module.controller('sidenavController',
                             $mdDialog.cancel();
                         };
                     },
-                    templateUrl: '/components/about/about.html',
+                    templateUrl: 'components/about/about.html',
                     clickOutsideToClose:true,
                     fullscreen: $scope.customFullscreen
                 })
