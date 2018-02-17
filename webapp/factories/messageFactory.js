@@ -160,9 +160,9 @@ module.service('messageFactory', ['$cookies', '$q', '$rootScope', function ($coo
             }
         ]);
         // Ropsten test network contract address
-        let EthChat = EthChatContract.at('0x68e8e7b81d450f022a231b57b014f347d7f2a34a');
+        //let EthChat = EthChatContract.at('0x68e8e7b81d450f022a231b57b014f347d7f2a34a');
         // Main network contract address
-        //let EthChat = EthChatContract.at('0xB5f1E1EB84947E99b24F8690da938a8016672b66');
+        let EthChat = EthChatContract.at('0xB5f1E1EB84947E99b24F8690da938a8016672b66');
 
         let fetchMessagesForRoom = function(roomName) {
             let deferred = $q.defer();
