@@ -4,7 +4,7 @@ EthChat is a secure distributed chat client running on the Ethereum blockchain. 
 ### What technologies does EthChat use?
 The EthChat smart contract is built using Solidity. This contract is currently running on the Ethereum blockhain and functions as the backend. The frontend is written using AngularJS, jQuery, Javascript, HTML, and CSS.
 
-### Installtion Instructions
+### Installation Instructions
 To run EthChat yourself, host the static web files and navigate to the index. If you want to try hosting EthChat on your localhost, you can use https://github.com/indexzero/http-server to test it out. EthChat requires that MetaMask is installed in order to query the blockchain. A live example of Ethchat can be found at https://austenke.github.io/EthChat/.
 
 ### About me
